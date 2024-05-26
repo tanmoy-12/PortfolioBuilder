@@ -1,0 +1,21 @@
+{
+    "name": "portfolio-builder",
+    "version": "1.0.0",
+    "description": "A portfolio builder web application.",
+    "main": "index.js",
+    "scripts": {
+      "build": "echo 'No build step required'"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/tanmoy-12/portfoliobuilder.git"
+    },
+    "author": "Your Name",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/tanmoy-12/portfoliobuilder/issues"
+    },
+    "homepage": "https://github.com/tanmoy-12/portfoliobuilder#readme",
+    "devDependencies": {}
+  }
+  
