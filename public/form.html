@@ -6,12 +6,26 @@
 </head>
 <body>
     <form id="portfolioForm">
-        <!-- form fields for name, profession, bio, etc. -->
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="profession" placeholder="Profession" required>
+        <textarea name="bio" placeholder="Bio"></textarea>
+        <input type="text" name="education" placeholder="Education">
+        <input type="text" name="skills" placeholder="Skills (comma separated)">
+        <input type="text" name="research" placeholder="Research/Publication">
+        <input type="text" name="interests" placeholder="Interests">
+        <input type="text" name="awards" placeholder="Awards & Certificates">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone">
+        <input type="text" name="address" placeholder="Address">
+        <input type="text" name="social_media" placeholder="Social Media Links">
+        <input type="file" name="photo" accept="image/*">
+        <input type="file" name="resume" accept="application/pdf">
         <button type="submit">Preview Portfolio</button>
     </form>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
