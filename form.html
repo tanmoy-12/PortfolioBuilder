@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Create Your Portfolio</h1>
+    <form id="portfolio-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="profession">Profession:</label>
+        <input type="text" id="profession" name="profession" required><br>
+
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*"><br>
+
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" required></textarea><br>
+
+        <label for="education">Education:</label>
+        <textarea id="education" name="education" required></textarea><br>
+
+        <label for="skills">Skills (comma-separated):</label>
+        <input type="text" id="skills" name="skills" required><br>
+
+        <label for="resume">Resume (PDF):</label>
+        <input type="file" id="resume" name="resume" accept=".pdf"><br>
+
+        <label for="research">Research/Publication:</label>
+        <textarea id="research" name="research"></textarea><br>
+
+        <label for="interests">Interests:</label>
+        <textarea id="interests" name="interests"></textarea><br>
+
+        <label for="awards">Awards & Certificates:</label>
+        <textarea id="awards" name="awards"></textarea><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea><br>
+
+        <label for="social_media">Social Media Links (comma-separated):</label>
+        <input type="text" id="social_media" name="social_media"><br>
+
+        <label for="projects">Projects (JSON format):</label>
+        <textarea id="projects" name="projects"></textarea><br>
+
+        <label for="experience">Experience:</label>
+        <textarea id="experience" name="experience" required></textarea><br>
+
+        <label for="color_theme">Color Theme:</label>
+        <select id="color_theme" name="color_theme">
+            <option value="white">White</option>
+            <option value="blue">Blue</option>
+            <option value="grey">Grey</option>
+            <option value="green">Green</option>
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="pink">Pink</option>
+            <option value="orange">Orange</option>
+        </select><br>
+
+        <button type="button" onclick="generatePortfolio()">Generate Portfolio</button>
+    </form>
+    <a href="index.html"><button>Back to Home</button></a>
+    <script src="jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
