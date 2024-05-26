@@ -1,25 +1,152 @@
-body {
-    font-family: Arial, sans-serif;
+/* Basic Reset */
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1, h2, h3 {
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
 }
 
-button:hover {
-    background-color: #45a049;
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77a6f7 3px solid;
+    text-align: center;
+}
+
+header img.profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+header h1, header h2 {
+    margin-bottom: 10px;
+}
+
+main {
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    background: #e4e4e4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-left: #77a6f7 5px solid;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Color Themes */
+body.white {
+    background-color: #fff;
+    color: #333;
+}
+
+body.blue {
+    background-color: #e0f7fa;
+    color: #01579b;
+}
+
+body.grey {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+body.green {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+body.red {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+body.yellow {
+    background-color: #fffde7;
+    color: #f9a825;
+}
+
+body.pink {
+    background-color: #fce4ec;
+    color: #c2185b;
+}
+
+body.orange {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header, footer {
+        padding: 10px 0;
+    }
+
+    header img.profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    section {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    section h2 {
+        font-size: 1.3em;
+    }
 }

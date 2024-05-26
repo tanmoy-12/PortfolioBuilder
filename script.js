@@ -24,42 +24,111 @@ function generatePortfolio() {
     const resumeUrl = resume ? URL.createObjectURL(resume) : null;
 
     const portfolioHtml = `
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>${name}'s Portfolio</title>
-            <link rel="stylesheet" href="style.css">
-            <style>
-                body {
-                    background-color: ${color_theme};
-                }
-            </style>
-        </head>
-        <body>
-            <h1>${name}</h1>
-            <h2>${profession}</h2>
-            ${photoUrl ? `<img src="${photoUrl}" alt="Photo">` : ''}
-            <p>${bio}</p>
-            <h3>Education</h3>
-            <p>${education}</p>
-            <h3>Skills</h3>
-            <ul>${skills.map(skill => `<li>${skill}</li>`).join('')}</ul>
-            ${research ? `<h3>Research/Publication</h3><p>${research}</p>` : ''}
-            ${interests ? `<h3>Interests</h3><p>${interests}</p>` : ''}
-            ${awards ? `<h3>Awards & Certificates</h3><p>${awards}</p>` : ''}
-            <h3>Contact</h3>
-            <p>Email: ${email}</p>
-            <p>Phone: ${phone}</p>
-            <p>Address: ${address}</p>
-            ${social_media.length ? `<h3>Social Media</h3><ul>${social_media.map(link => `<li>${link}</li>`).join('')}</ul>` : ''}
-            ${projects ? `<h3>Projects</h3><p>${projects}</p>` : ''}
-            <h3>Experience</h3>
-            <p>${experience}</p>
-            ${resumeUrl ? `<a href="${resumeUrl}" download="resume.pdf">Download Resume</a>` : ''}
-        </body>
-        </html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ name }}'s Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="{{ color_theme }}">
+        <header>
+            <div class="container">
+                <img src="{{ photo_path }}" alt="{{ name }}" class="profile-photo">
+                <h1>{{ name }}</h1>
+                <h2>{{ profession }}</h2>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <section class="bio">
+                    <h2>Bio</h2>
+                    <p>{{ bio }}</p>
+                </section>
+    
+                <section class="education">
+                    <h2>Education</h2>
+                    <p>{{ education }}</p>
+                </section>
+    
+                {% if skills %}
+                <section class="skills">
+                    <h2>Skills</h2>
+                    <ul>
+                        {% for skill in skills %}
+                        <li>{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                {% endif %}
+    
+                {% if research %}
+                <section class="research">
+                    <h2>Research/Publications</h2>
+                    <p>{{ research }}</p>
+                </section>
+                {% endif %}
+    
+                {% if interests %}
+                <section class="interests">
+                    <h2>Interests</h2>
+                    <p>{{ interests }}</p>
+                </section>
+                {% endif %}
+    
+                {% if awards %}
+                <section class="awards">
+                    <h2>Awards & Certificates</h2>
+                    <p>{{ awards }}</p>
+                </section>
+                {% endif %}
+    
+                <section class="contact">
+                    <h2>Contact</h2>
+                    <p>Email: {{ email }}</p>
+                    <p>Phone: {{ phone }}</p>
+                    <p>Address: {{ address }}</p>
+                    <p>Social Media: {{ social_media }}</p>
+                </section>
+    
+                {% if projects %}
+                <section class="projects">
+                    <h2>Projects</h2>
+                    {% for project in projects %}
+                    <div class="project">
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.date }}</p>
+                        <p>{{ project.details }}</p>
+                        {% if project.website %}
+                        <p><a href="{{ project.website }}" target="_blank">Project Link</a></p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </section>
+                {% endif %}
+    
+                <section class="experience">
+                    <h2>Experience</h2>
+                    <p>{{ experience }}</p>
+                </section>
+    
+                {% if resume_path %}
+                <section class="resume">
+                    <h2>Resume</h2>
+                    <p><a href="{{ resume_path }}" download>Download Resume</a></p>
+                </section>
+                {% endif %}
+            </div>
+        </main>
+        <footer>
+            <div class="container">
+                <p>&copy; {{ name }}'s Portfolio</p>
+            </div>
+        </footer>
+    </body>
+    </html>
+    
     `;
 
     localStorage.setItem('portfolioHtml', portfolioHtml);
